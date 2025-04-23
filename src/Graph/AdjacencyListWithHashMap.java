@@ -1,10 +1,8 @@
 package Graph;
 
-import java.security.PublicKey;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 public class AdjacencyListWithHashMap {
 
@@ -30,8 +28,8 @@ public class AdjacencyListWithHashMap {
 
     public  void removeVertex(int v){
         adjacencyList.remove(v);
-        for (List<Integer> n : adjacencyList.values()){
-            n.remove(v);
+        for (List<Integer> edges : adjacencyList.values()){
+            edges.removeIf(n -> n == v); // removes all references to 'v'
         }
     }
 
@@ -55,6 +53,15 @@ public class AdjacencyListWithHashMap {
         graph.addEdge(2,4);
         graph.addEdge(3,4);
         graph.addEdge(4, 1);
+
+        // print the Graph Vertex and Edges
+        graph.printGraph();
+
+        System.out.println("\nUpdated Graph after Vertex removal:----");
+        // Remove Vertex 2;
+        graph.removeVertex(2);
+
+        // print updated Graph Vertex and Edges
         graph.printGraph();
 
     }
