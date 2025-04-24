@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class DepthFirstSearch {
 
     public static  void dfs(ArrayList<Edge>[] graph, boolean vis[], int curr){
-        if(vis[curr] == true){
+        if(vis[curr]){
             return;
         }
         vis[curr] = true;
