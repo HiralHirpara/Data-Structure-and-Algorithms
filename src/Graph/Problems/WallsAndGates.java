@@ -49,9 +49,6 @@ public class WallsAndGates {
                 if(grid[i][j] == INF){
                     grid[i][j] = bfs(grid, i, j); // BFS via INF
                 }
-                if(grid[i][j] == GATE){
-                    grid[i][j] = bfs(grid, i, j); // BFS via INF
-                }
             }
         }
     }
@@ -124,7 +121,7 @@ public class WallsAndGates {
         COLS = grid[0].length;
 
         WallsAndGates wallsAndGates = new WallsAndGates();
-        wallsAndGates.wallsAndGatesDFS(grid);
+        wallsAndGates.wallsAndGatesDFS(grid); // T(n) : O((m×n)²) , S(n) : O(m×n) for visit
         System.out.println("DFS Result is :");
         for(int[] g : grid){
             System.out.println(Arrays.toString(g));
@@ -134,7 +131,7 @@ public class WallsAndGates {
         ROWS = grid.length;
         COLS = grid[0].length;
         System.out.println("\nBFS via INF Result is :");
-        wallsAndGates.wallsAndGatesDFS(grid);
+        wallsAndGates.wallsAndGatesDFS(grid); // T(n) : O((m×n)²) , S(n) : O(m×n) per run
         for(int[] g : grid){
             System.out.println(Arrays.toString(g));
         }
@@ -143,10 +140,33 @@ public class WallsAndGates {
         ROWS = grid.length;
         COLS = grid[0].length;
         System.out.println("\nBFS via GATES Result is :");
-        wallsAndGates.wallsAndGatesBFSviaGATES(grid);
+        wallsAndGates.wallsAndGatesBFSviaGATES(grid); // T(n) : O(m×n) , S(n) : O(m×n) for queue
         for(int[] g : grid){
             System.out.println(Arrays.toString(g));
         }
 
     }
+    /*
+    Why we can't use DFS?
+        - DFS can go deep before trying other routes. So it might fill a room with a longer path before it discovers a shorter one later.
+
+
+    Why BFS works well?
+        - You want the shortest distance to the nearest gate.
+        - BFS is made for this — it explores all nodes level-by-level, so the first time you reach a room is the shortest path.
+
+
+    What's the difference between doing BFS from INF cells vs BFS from gates (0s) in the problem?
+        1. BFS from Gates (Correct Approach)
+            - BFS from all gates simultaneously ensures each room gets filled with the shortest path to any gate.
+                Because BFS expands level by level, the first time a room is reached, it's guaranteed to be the shortest path.
+            - Efficient, correct, minimal updates.
+
+        2. BFS from each INF (wrong or inefficient)
+            - We have to run a separate BFS for each INF, which is super slow.
+            - We might check the same cells many times.
+            - It's harder to guarantee you found the nearest gate unless you carefully track distances and stop early.
+            - Much slower and more complicated.
+
+     */
 }

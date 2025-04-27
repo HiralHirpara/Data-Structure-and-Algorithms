@@ -28,7 +28,7 @@ public class CloneGraph {
 //        return bfs(node, map);
     }
 
-    public static Node bfs(Node node, Map<Node, Node> map){
+    private static Node bfs(Node node, Map<Node, Node> map){
            if(node == null){
                return null;
            }
@@ -51,7 +51,7 @@ public class CloneGraph {
            }
            return map.get(node);
     }
-    public static Node dfs(Node node, Map<Node, Node> map){
+    private static Node dfs(Node node, Map<Node, Node> map){
         if(node == null){
             return null;
         }
@@ -67,6 +67,7 @@ public class CloneGraph {
         }
         return newNode;
     }
+
     public static void main(String[] args) {
         Node node1 = new Node(1);
         Node node2 = new Node(2);
