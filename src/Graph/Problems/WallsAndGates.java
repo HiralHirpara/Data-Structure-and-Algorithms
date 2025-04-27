@@ -122,6 +122,8 @@ public class WallsAndGates {
 
         WallsAndGates wallsAndGates = new WallsAndGates();
         wallsAndGates.wallsAndGatesDFS(grid); // T(n) : O((m×n)²) , S(n) : O(m×n) for visit
+
+        System.out.println("\n:::::::Walls And Gates:::::::\n");
         System.out.println("DFS Result is :");
         for(int[] g : grid){
             System.out.println(Arrays.toString(g));

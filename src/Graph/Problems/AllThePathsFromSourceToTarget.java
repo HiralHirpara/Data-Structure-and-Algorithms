@@ -77,6 +77,7 @@ public class AllThePathsFromSourceToTarget {
 
 
         resultList = new ArrayList<>();
+        System.out.println("\n:::::::All The Paths From Source To Target:::::::\n");
         allPathsSourceTargetDFS(graph,0,  new ArrayList<>(), resultList);
         System.out.println("Second DFS Result: "+resultList);
 

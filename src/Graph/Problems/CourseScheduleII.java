@@ -86,6 +86,7 @@ public class CourseScheduleII {
         int numCourses = 5;
         int[][] prerequisite = {{0,1},{0,2},{1,3},{1,4},{2,4},{3,4}};
 
+        System.out.println("\n:::::::Course Schedule II:::::::\n");
         // T(n) : (V + E), S(n) : O(V+E)
         System.out.println("Result of Cycle Detection approach with DSF: " + Arrays.toString(courseScheduleII.cycleDetectionDFS(numCourses, prerequisite)));
 
