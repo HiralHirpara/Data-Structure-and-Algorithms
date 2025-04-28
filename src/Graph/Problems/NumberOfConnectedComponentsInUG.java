@@ -69,11 +69,14 @@ public class NumberOfConnectedComponentsInUG {
 
     private int countComponentsDisjointSet(int n, int[][] edges){
         UnionFind unionFind = new UnionFind(n);
+        int count = n;
 
         for(int i[] : edges){
-            unionFind.union(i[0], i[1]);
+            if(unionFind.union(i[0], i[1])){
+                count--;
+            }
         }
-        return unionFind.getCount();
+        return count;
     }
     public static void main(String[] args) {
 
