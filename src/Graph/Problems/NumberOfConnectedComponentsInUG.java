@@ -1,5 +1,6 @@
 package Graph.Problems;
 
+
 import java.util.*;
 
 public class NumberOfConnectedComponentsInUG {
@@ -65,6 +66,15 @@ public class NumberOfConnectedComponentsInUG {
         }
         return result;
     }
+
+    private int countComponentsDisjointSet(int n, int[][] edges){
+        UnionFind unionFind = new UnionFind(n);
+
+        for(int i[] : edges){
+            unionFind.union(i[0], i[1]);
+        }
+        return unionFind.getCount();
+    }
     public static void main(String[] args) {
 
         NumberOfConnectedComponentsInUG ng = new NumberOfConnectedComponentsInUG();
@@ -78,6 +88,9 @@ public class NumberOfConnectedComponentsInUG {
         System.out.println("Result of DSF approach: " + ng.countComponents(n, edges));
 
         edges = new int[][] {{0, 1}, {0,2}, {1, 3}, {3, 4}};
-         System.out.println("Result of BSF approach: " + ng.countComponentsBFS(n, edges));
+        System.out.println("Result of BSF approach: " + ng.countComponentsBFS(n, edges));
+
+        edges = new int[][] {{0, 1}, {3, 4}};
+        System.out.println("Result of Disjoint Set approach: " + ng.countComponentsDisjointSet(n, edges));
     }
 }
