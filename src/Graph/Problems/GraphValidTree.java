@@ -4,7 +4,9 @@ import java.util.*;
 
 public class GraphValidTree {
 
-    private boolean  cycleDetectionDFS(int n, int[][] edges){
+    private boolean  validTreeDFS(int n, int[][] edges){
+        if(edges.length != n-1) return false;
+
         Map<Integer, List<Integer>> graph = new HashMap<>();
 
         for(int i = 0;i<n;i++){
@@ -35,7 +37,9 @@ public class GraphValidTree {
         }
         return true;
     }
-    private boolean cycleDetectionBFS(int n, int[][] edges){
+    private boolean validTreeBFS(int n, int[][] edges){
+        if(edges.length != n-1) return false;
+
         Map<Integer, List<Integer>> graph = new HashMap<>();
 
         for(int i = 0;i<n;i++){
@@ -68,6 +72,19 @@ public class GraphValidTree {
         return visited.size() == n;
     }
 
+    private boolean validTreeDisjointSet(int n, int[][] edges){
+        if(edges.length != n-1) return false;
+
+        UnionFind unionFind = new UnionFind(n);
+
+        for(int i [] : edges){
+            if(!unionFind.union(i[0], i[1])){
+                return false;
+            }
+        }
+        return  true;
+    }
+
     public static void main(String[] args) {
         GraphValidTree graphValidTree = new GraphValidTree();
         int n  = 5;
@@ -75,12 +92,16 @@ public class GraphValidTree {
 
         System.out.println("\n:::::::Graph Valid Tree:::::::\n");
 
-        // T(n) : O(V + E)
-        System.out.println("Result of Cycle Detection approach with DSF: " + graphValidTree.cycleDetectionDFS(n, edges));
+        // T(n) : O(N + E), S(n) : O(N + E)
+        System.out.println("Result of Cycle Detection approach with DSF: " + graphValidTree.validTreeDFS(n, edges));
 
         edges = new int[][] {{0, 1}, {0,2}, {1, 2}, {2, 3}, {3, 4}};
-        System.out.println("Result of Cycle Detection approach with BSF: " + graphValidTree.cycleDetectionBFS(n, edges));
+        System.out.println("Result of Cycle Detection approach with BSF: " + graphValidTree.validTreeBFS(n, edges));
 
+        // α(N) is the Inverse Ackermann Function.
+        // T(n) : O(N⋅α(N)) , S(n) : O(n)
+        edges =  new int[][] {{0,1},{1,2},{2,3},{3,4}};
+        System.out.println("Result of Disjoint Set approach: " + graphValidTree.validTreeDisjointSet(n, edges));
 
     }
 }

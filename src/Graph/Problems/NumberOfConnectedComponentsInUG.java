@@ -87,13 +87,16 @@ public class NumberOfConnectedComponentsInUG {
 
         System.out.println("\n:::::::Number of Connected Components in an Undirected Graph:::::::\n");
 
-        // T(n) : O(V + E)
+        // T(n) : O(E + V), S(n) : O(E + V)
         System.out.println("Result of DSF approach: " + ng.countComponents(n, edges));
 
         edges = new int[][] {{0, 1}, {0,2}, {1, 3}, {3, 4}};
         System.out.println("Result of BSF approach: " + ng.countComponentsBFS(n, edges));
 
         edges = new int[][] {{0, 1}, {3, 4}};
+
+        // T(n) : O(V + E ⋅α(n)), S(n) :  O(V)
+        // α(n) : inverse Ackermann function, Union function time complexity
         System.out.println("Result of Disjoint Set approach: " + ng.countComponentsDisjointSet(n, edges));
     }
 }
