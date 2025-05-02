@@ -43,4 +43,16 @@ public class Trie {
         }
         return  true;
     }
+
+    public static void main(String[] args) {
+        Trie obj = new Trie();
+        obj.insert("apple");
+        System.out.println("Word 'apple' is inserted");
+        obj.insert("banana");
+        System.out.println("Word 'banana' is inserted");
+        System.out.println("Word 'apple' is available : " +obj.search("apple"));
+        System.out.println("Word 'appl' is available : " +obj.search("appl"));
+        System.out.println("Any Word Starts With  'app' : "+obj.startsWith("app"));
+        System.out.println("Any Word Starts With  'nana' : "+obj.startsWith("nana"));
+    }
 }
