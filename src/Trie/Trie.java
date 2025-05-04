@@ -1,9 +1,6 @@
 package Trie;
 
-class TrieNode{
-    TrieNode[] children = new TrieNode[26];
-    boolean endOfWord = false;
-}
+
 public class Trie {
     TrieNode root;
     public Trie(){
@@ -46,13 +43,26 @@ public class Trie {
 
     public static void main(String[] args) {
         Trie obj = new Trie();
+        System.out.println("\n:::::::Implement Trie (Prefix Tree) with Array:::::::\n");
         obj.insert("apple");
         System.out.println("Word 'apple' is inserted");
         obj.insert("banana");
-        System.out.println("Word 'banana' is inserted");
+        System.out.println("\nWord 'banana' is inserted");
         System.out.println("Word 'apple' is available : " +obj.search("apple"));
         System.out.println("Word 'appl' is available : " +obj.search("appl"));
-        System.out.println("Any Word Starts With  'app' : "+obj.startsWith("app"));
-        System.out.println("Any Word Starts With  'nana' : "+obj.startsWith("nana"));
+        System.out.println("\nAny Word Starts With 'app' : "+obj.startsWith("app"));
+        System.out.println("Any Word Starts With 'nana' : "+obj.startsWith("nana"));
+    }
+
+    private class TrieNode{
+        TrieNode[] children = new TrieNode[26];
+        boolean endOfWord = false;
     }
 }
+/*
+    Insert  T(n) : O(L), S(n) : O(t)
+    Search  T(n) : O(L)
+    StartsWith  T(n) : O(L)
+    L is Length of word
+    t is TrieNode created
+ */
