@@ -41,14 +41,18 @@ public class TrieWithHashMap {
     public static void main(String[] args) {
         TrieWithHashMap trieWithHashMap = new TrieWithHashMap();
 
+
         System.out.println("\n:::::::Implement Trie (Prefix Tree) with HashMap:::::::\n");
+
         trieWithHashMap.insert("mango");
         System.out.println("Word 'mango' is inserted");
         trieWithHashMap.insert("kiwi");
         System.out.println("Word 'kiwi' is inserted");
-        System.out.println("Word 'apple' is available : " +trieWithHashMap.search("apple"));
+
+
+        System.out.println("\nWord 'apple' is available : " +trieWithHashMap.search("apple"));
         System.out.println("Word 'kiwi' is available : " +trieWithHashMap.search("kiwi"));
-        System.out.println("Any Word Starts With  'mang' : "+trieWithHashMap.startsWith("mang"));
+        System.out.println("\nAny Word Starts With  'mang' : "+trieWithHashMap.startsWith("mang"));
         System.out.println("Any Word Starts With  'wi' : "+trieWithHashMap.startsWith("wi"));
     }
     private class TrieNode{
@@ -56,3 +60,11 @@ public class TrieWithHashMap {
         boolean endOfWord = false;
     }
 }
+
+/*
+    Insert  T(n) : O(L), S(n) : O(t)
+    Search  T(n) : O(L)
+    StartsWith  T(n) : O(L)
+    L is Length of word
+    t is TrieNode created
+ */
