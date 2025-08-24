@@ -1,0 +1,10 @@
+Subject: Internal Interest – [Job Title] Role
+Hi [Recruiter’s Name],
+I hope you're doing well. I’m currently working as a Software Engineer on the [team name, if known] team at Wells Fargo in San Francisco. I recently came across the opening for the [Job Title] role based in [Other Location], and I’m very interested in the opportunity.
+Given my background in developing scalable Java-based REST API microservices using Spring Boot, and my strong collaboration across Agile teams, I believe I could bring valuable experience to the role.
+That said, I wanted to check whether the team would consider candidates working from San Francisco, as I’m not in a position to relocate at this time.
+I’ve attached my resume for your review. I’d really appreciate the chance to discuss the role further and learn more about the team’s goals and location flexibility.
+Thank you for your time and consideration!
+Best regards,
+[Your Full Name]
+[Your Wells Fargo Email or Preferred Contact Info]
