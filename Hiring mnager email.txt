@@ -1,0 +1,11 @@
+Subject: Application for Senior Java Engineer Role – Wells Fargo
+Hi [Hiring Manager’s Name],
+I hope you're doing well. I’m reaching out to express interest in the Senior Java Engineer role at Wells Fargo. With over [X] years of experience designing and building enterprise-grade Java-based microservices — including my current role at Wells Fargo — I believe I’m well-suited to contribute meaningfully to your team.
+My recent work has focused on building RESTful APIs using Spring Boot, deploying services in cloud-based (Azure) environments, and driving performance and reliability improvements for large-scale systems. I’m also experienced with NoSQL databases like MongoDB and DevOps pipelines (Jenkins, CI/CD), and thrive in agile, cross-functional teams.
+I’ve attached my resume for your review, and would be happy to discuss how I can contribute to your team’s success.
+Thank you for your time and consideration.
+Best regards,
+[Your Full Name]
+[Phone Number]
+[Email Address]
+[LinkedIn Profile (optional)]
